@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-eval-harness"
+version = "0.1.0"
+description = "Rubric-based evaluation of LLM responses: weighted rubrics, heuristic checks, pairwise Bradley-Terry ranking."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Ansari Adeel Ahmad" }]
+keywords = ["llm", "evaluation", "rubric", "annotation", "bradley-terry"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+llm-eval = "llm_eval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
