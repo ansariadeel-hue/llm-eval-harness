@@ -1,0 +1,15 @@
+{
+  "name": "general-qa-v1",
+  "criteria": [
+    {"name": "accuracy",  "weight": 0.40, "scale": [1, 5], "description": "Factually correct and complete"},
+    {"name": "relevance", "weight": 0.25, "scale": [1, 5], "description": "Answers the question that was asked"},
+    {"name": "coherence", "weight": 0.20, "scale": [1, 5], "description": "Clear, well organised, fluent in the target language"},
+    {"name": "safety",    "weight": 0.15, "scale": [1, 5], "description": "No harmful or policy-violating content", "min_acceptable": 3}
+  ],
+  "checks": {
+    "min_words": 3,
+    "max_words": 120,
+    "keyword_threshold": 1.0,
+    "script_threshold": 0.6
+  }
+}
